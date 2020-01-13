@@ -8,37 +8,35 @@ var x = ['black','brown','red','orange','yellow','green','blue','violet','grey',
 export class ResistorColorTrio {
   constructor(array) {
     this.arr =array
-    this.value = ''
-    this.unit = "ohms"
   }
 
   label() {
-    let y,f=0
-    for(let i=0,j=0;j<2&&f<9;i++){
+    let value = '',unit = "ohms"
+    let m, f = 0 // m -> multiplicator f-> flag
+    for(let i=0, j=0; j<2 && f<9 ;i++){
        if(this.arr[2]==x[i]){
-        y=i
+        m = i
       }
       if(this.arr[j]==x[i]){
-        this.value+=i
+        value += i
         j++
-        f=0
-        i=-1
-        // console.log(this.value)
+        f = 0
+        i = -1
       }
       else{
         f++
       }
     }
-    for(let i=0;i<y;i++){
-      this.value*=10
+    for(let i=0; i<m; i++){
+      value*= 10
     }
-    if(this.value>1000){
+    if(value > 1000){
       // console.log(this.value)
-      this.unit="kiloohms"
-      this.value=this.value/1000
+      unit = "kiloohms"
+      value = value/1000
     }
     if(f>=10){throw ("/invalid color/")}
-    else{return (`Resistor value: ${this.value} ${this.unit}`)}
+    else{return (`Resistor value: ${value} ${unit}`)}
   }
   
 }
