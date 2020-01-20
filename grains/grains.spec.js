@@ -55,7 +55,7 @@ describe('Grains', () => {
       expect(square(32)).toEqual('2147483648');
     });
 
-    xtest('64', () => {
+    test('64', () => {
       expect(square(64)).toEqual('9223372036854775808');
     });
 

@@ -4,8 +4,10 @@
 //
 import BigInt from "./lib/big-integer";
 
-export const square = (numb) => {
+export const square = (number) => {
   let first = 1
+  let numb = new BigInt(number)
+
   if(numb<=0 || numb>64){
     throw ('square must be between 1 and 64')
   }
