@@ -18,11 +18,19 @@ export class QueenAttack {
         if(this.queens.black===this.queens.white){
             throw ("Queens cannot share the same space");
         }
-        return this.queens
+        // return this.queens
     }
 
     toString() {
-        
+        let string =""
+        let st = ['_','_','_','_','_','_','_','_']
+        let board = [st,st,st,st,st,st,st,st]
+        // board[this.queens.black[0]][this.queens.black[1]] = "B"
+        // board[this.queens.white[0]][this.queens.white[1]] = "W"    
+        // board=board.slice(',')
+        string= board.join('\n')
+        // console.log(board.join('\n').slice(',')) 
+    return string
     }
 
     canAttack() {
