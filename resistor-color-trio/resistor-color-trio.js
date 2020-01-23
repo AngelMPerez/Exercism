@@ -35,7 +35,7 @@ export class ResistorColorTrio {
       unit = "kiloohms"
       value = value/1000
     }
-    if(f<10){return (`Resistor value: ${value} ${unit}`)}
+    if(f<this.arr.length){return (`Resistor value: ${value} ${unit}`)}
     else{throw '/invalid color/'}
   }
   
