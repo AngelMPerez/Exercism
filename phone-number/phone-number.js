@@ -9,6 +9,9 @@ export const clean = (string) => {
     if(string[i]==='0'||string[i]==1||string[i]==2||string[i]==3||string[i]==4||string[i]==5||string[i]==6||string[i]==7||string[i]==8||string[i]==9){
       numb+=string[i]
     }
+    if(string[i]!=' '||string[i]!='('||string[i]!=')'||string[i]!='+'||string[i]!='-'){
+
+    }
   }
   if(numb.length<10){
     throw 'Incorrect number of digits'
