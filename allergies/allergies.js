@@ -5,38 +5,33 @@
 
 export class Allergies {
   constructor(numb) {
-    this.allergie={
-      arr:[],
-      index:[]
-    }
+    this.allergie=[]
+    while(numb>256){numb=numb-256}
     for(let i=7;i>=0;i--){
       // console.log(Math.pow(2,i))
       if(numb-Math.pow(2,i)>=0){
-        this.allergie.index.push(i)
+        this.allergie.push(i)
         numb-=Math.pow(2,i)
       }
     }
-    console.log(this.allergie.index)
+    // console.log(this.allergie)
   }
 
   list() {
     let array = ['eggs','peanuts','shellfish','strawberries','tomatoes','chocolate','pollen','cats']
-    for(let i=0,j=0;i<this.allergie.index.length;i++){
-      if(j==this.allergie.index[i]){
-        this.allergie.arr.push(array[i])
-        j=-1
-      }
-      j++
+    let array2 = []
+    for(let i=0;i<this.allergie.length;i++){
+      array2.unshift(array[this.allergie[i]])
     }
-    console.log(this.allergie.arr)
-    return this.allergie.arr
+    // console.log(array2)
+    return array2
   }
 
   allergicTo(string) {
-    this.list()
-    console.log(this.allergie.arr)
-    for(let i=0;i<this.allergie.arr.length;i++){
-      if(string==this.allergie.arr[i]){
+    let arr=this.list()
+    // console.log(arr)
+    for(let i=0;i<arr.length;i++){
+      if(string==arr[i]){
         return true
       }
     }
