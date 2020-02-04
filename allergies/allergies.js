@@ -4,15 +4,23 @@
 //
 
 export class Allergies {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(numb) {
+    this.allergie=[]
+    for(let i=7;i>=0;i--){
+      // console.log(Math.pow(2,i))
+      if(numb-Math.pow(2,i)>=0){
+        this.allergie.push(i)
+        numb-=2^i
+      }
+    }
   }
 
   list() {
-    throw new Error("Remove this statement and implement this function");
+    let array = []
+    this.allergie
   }
 
   allergicTo() {
-    throw new Error("Remove this statement and implement this function");
+    
   }
 }
